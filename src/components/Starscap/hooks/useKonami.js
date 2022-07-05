@@ -1,12 +1,11 @@
 import { useRef } from 'react';
 import { gsap } from 'gsap';
-import { KONAMI_CODE, AUDIO } from '../const';
+import { KONAMI_CODE, AUDIO } from '../../../const';
 
 const useKonami = (props) => {
-  const {isPartying, starsRef, defaultAlpha } = props
+  const {isPartying, starsRef, defaultAlpha, partyRef } = props
   
   const codeRef = useRef([]);
-  const partyRef = useRef(null);
 
   const handleCode = (e) => {
     codeRef.current = [...codeRef.current, e.code].slice(

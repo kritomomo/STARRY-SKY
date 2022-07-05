@@ -1,9 +1,9 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useRef, useEffect } from 'react';
-import "./Starscap.css"
 import { gsap } from 'gsap';
 import useStar from './hooks/useStar';
 import useKonami from './hooks/useKonami';
-import usePartying from './hooks/usePartying';
+import usePartying from '../../hooks/usePartying';
 
 // x:星星在 x 轴上的位置
 // y:星星在 y 轴上的位置
@@ -20,9 +20,9 @@ const Starscape = ({ densityRatio = 0.5, sizeLimit = 5, defaultAlpha = 0.5, scal
   const contextRef = useRef(null)
   const starsRef = useRef(null)
   
-  const { isPartying } = usePartying()
+  const { partyRef, isPartying } = usePartying()
   const { LOAD, RENDER, UPDATE, EXIT } = useStar({ canvasRef, contextRef, starsRef, densityRatio, proximityRatio, scaleLimit, defaultAlpha, sizeLimit, isPartying })
-  const { handleCode } = useKonami({isPartying, starsRef, defaultAlpha })
+  const { handleCode } = useKonami({isPartying, starsRef, defaultAlpha,partyRef })
 
   useEffect(() => {
     contextRef.current = canvasRef.current.getContext("2d");

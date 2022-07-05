@@ -8,7 +8,7 @@ const usePartying = () => {
   partyRef.current.progress() !== 0 &&
   partyRef.current.progress() !== 1;
   
-  return { isPartying}
+  return { partyRef, isPartying}
 }
 
 export default usePartying
