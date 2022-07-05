@@ -1,13 +1,19 @@
 import React from 'react';
-import './App.css';
 import Starscape from './components/Starscap';
-import { gsap } from "gsap";
 
 const App = () => {
+  const DEFAULT_DENSITY = 0.75;
+  const DEFAULT_SIZE = 10;
+  const DEFAULT_SCALE = 15;
+  const DEFAULT_PROXIMITY = 0.2;
+
   return (
-    <div className="App">
-      <Starscape />
-    </div>
+    <Starscape
+      densityRatio={DEFAULT_DENSITY}
+      sizeLimit={DEFAULT_SIZE}
+      scaleLimit={DEFAULT_SCALE}
+      proximityRatio={DEFAULT_PROXIMITY}
+    />
   );
 }
 
